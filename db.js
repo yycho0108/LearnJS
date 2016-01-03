@@ -2,7 +2,8 @@
  * Created by jamiecho on 1/3/16.
  */
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/PWDB');
+var mongoURI = process.env.MONGOURI || "mongodb://localhost/PWDB";
+mongoose.connect(mongoURI);
 var acntSchema = mongoose.Schema({
     SITE : String,
     ID : String,
