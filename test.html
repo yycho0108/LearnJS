@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TestMyWebPage</title>
+    <script src="jquery"></script>
+</head>
+<body>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $.ajax({
+            type : "DELETE",
+            crossDomain: true,
+            url : "/cat",
+            data : "requester=JamieCho&fur-type=purr",
+            contentType : "text/plain",
+            success : function(msg){
+                console.log("Data DELETED!!");
+                console.log(msg);
+                $("#alert").html(msg);
+            }
+        }).done(function(){
+            console.log("COMPLETE!");
+        })
+    });
+</script>
+<p id="alert">CONTENT</p>
+</body>
+</html>
